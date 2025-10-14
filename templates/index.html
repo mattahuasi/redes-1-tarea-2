@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/styles.css')}}"
+    />
+
+    <script src="{{ url_for('static', filename='js/helpers.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/font.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/color.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/links.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/counter.js')}}"></script>
+
+    <title>Redes I: Tarea 2 | Servidor Flask</title>
+  </head>
+  <body>
+    <main id="main">
+      <header>
+        <h1>Tarea 2: Servidor Flask</h1>
+        <p>Implementación de cookies y preferencias del usuario</p>
+      </header>
+
+      <section aria-labelledby="expiracion">
+        <h2>Tiempo de expiración</h2>
+        <div id="countdown">
+          <span id="days">0</span> días <span id="hours">0</span> horas
+          <span id="minutes">0</span> minutos
+          <span id="seconds">0</span> segundos
+        </div>
+      </section>
+
+      <section aria-labelledby="preferencias">
+        <h2 id="preferencias">Seleccione tipo de letra y color</h2>
+
+        <form action="/set-preferences" method="POST">
+          <fieldset>
+            <legend>Tipo de letra</legend>
+
+            <div>
+              <input
+                type="radio"
+                name="font"
+                id="arial"
+                value="Arial"
+                checked
+              />
+              <label for="arial" style="font-family: Arial">Arial</label>
+            </div>
+
+            <div>
+              <input
+                type="radio"
+                name="font"
+                id="times"
+                value="Times New Roman"
+              />
+              <label for="times" style="font-family: 'Times New Roman'">
+                Times New Roman
+              </label>
+            </div>
+
+            <div>
+              <input
+                type="radio"
+                name="font"
+                id="currier"
+                value="Courier New"
+              />
+              <label for="currier" style="font-family: 'Courier New'">
+                Courier New
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Color de letra</legend>
+
+            <label for="color">Seleccione un color</label>
+            <input type="color" name="color" id="color" />
+          </fieldset>
+
+          <button type="submit">Guardar preferencias</button>
+        </form>
+      </section>
+
+      <section aria-labelledby="enlaces">
+        <h2 id="enlaces">Enlaces para visitar</h2>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre página</th>
+              <th>Estado</th>
+              <th>Acción</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>Universidad Mayor de San Andrés</td>
+              <td>ESTADO</td>
+              <td>
+                <a
+                  href="https://www.umsa.bo/"
+                  class="btn-link"
+                  target="_blank"
+                  noreferrer
+                  >Visitar</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>Facultad de Ciencias Puras y Naturales</td>
+              <td>ESTADO</td>
+              <td>
+                <a
+                  href="https://www.fcpn.edu.bo/"
+                  class="btn-link"
+                  target="_blank"
+                  noreferrer
+                  >Visitar</a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>Carrera de Informática</td>
+              <td>ESTADO</td>
+              <td>
+                <a
+                  href="https://informatica.umsa.bo/"
+                  class="btn-link"
+                  target="_blank"
+                  noreferrer
+                >
+                  Visitar
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <footer>
+        <h2>Integrantes</h2>
+        <ul style="list-style: none">
+          <li>Laura Mamani Alvaro Luis</li>
+          <li>Silvestre Laura Jhonny Juan</li>
+          <li>Tahuasi Pariamo Matt logan</li>
+        </ul>
+      </footer>
+    </main>
+  </body>
+</html>
